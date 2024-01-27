@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/general.css" rel="stylesheet" type="text/css" media="all">
+  <title>Buttons</title>
+  <script type="module" src="buttons.js"></script>
+  <script type="module" src="/icon/exclamation-mark-diamond.js"></script>
+  <script type="module" src="/icon/column-line-chart.js"></script>
+  <script type="module" src="/icon/database-tick.js"></script>
+  <script type="module" src="/icon/ungroup.js"></script>
+  <script type="module" src="/icon/file1.js"></script>
+  <script type="module" src="/icon/thumbs-up.js"></script>
+  <script type="module" src="/icon/exclamation-mark-diamond.js"></script>
+  <script type="module" src="/icon/pi.js"></script>
+  <script type="module" src="/icon/piggy-bank-coin.js"></script>
+  <script type="module" src="/icon/flower-stem2.js"></script>
+  <script type="module" src="/icon/arrow2-tray-in-down.js"></script>
+</head>
+<body>
+
+  <section>
+
+    <h1>Buttons</h1>
+
+    <h2>Just Text</h2>
+        
+    <div>
+      <button-default>Default</button-default>
+      <button-primary>Primary</button-primary>  
+      <button-secondary>Secondary</button-secondary>
+      <button-warning>Warning</button-warning>
+      <button-danger>Danger</button-danger>
+    </div>
+
+    <h2>Disabled</h2>
+
+    <div>
+      <button-default disabled>Default</button-default>
+      <button-primary disabled>Primary</button-primary>  
+      <button-secondary disabled>Secondary</button-secondary>
+      <button-warning disabled>Warning</button-warning>
+      <button-danger disabled>Danger</button-danger>
+    </div>
+
+    <h2>Prefix Icons</h2>
+        
+    <div>
+      <button-default>
+        <icon-exclamation-mark-diamond slot="prefix"></icon-exclamation-mark-diamond>
+        Default
+      </button-default>
+      <button-primary>
+        <icon-column-line-chart slot="prefix"></icon-column-line-chart>
+        Primary
+      </button-primary>  
+      <button-secondary>
+        <icon-database-tick slot="prefix"></icon-database-tick>
+        Secondary
+      </button-secondary>
+      <button-warning>
+        <icon-file1 slot="prefix"></icon-file1>
+        Warning
+      </button-warning>
+      <button-danger>
+        <icon-thumbs-up slot="prefix"></icon-thumbs-up>
+        Danger
+      </button-danger>
+    </div>
+
+    <h2>Suffix Icons</h2>
+      
+    <div>
+      <button-default>
+        <icon-pi slot="suffix"></icon-pi>
+        Default
+      </button-default>
+      <button-primary>
+        <icon-piggy-bank-coin slot="suffix"></icon-piggy-bank-coin>
+        Primary
+      </button-primary>  
+      <button-secondary>
+        <icon-flower-stem2 slot="suffix"></icon-flower-stem2>
+        Secondary
+      </button-secondary>
+      <button-warning>
+        <icon-file1 slot="suffix"></icon-file1>
+        Warning
+      </button-warning>
+      <button-danger>
+        <icon-thumbs-up slot="suffix"></icon-thumbs-up>
+        Danger
+      </button-danger>
+    </div>
+
+    <h2>Small Size</h2>
+        
+    <div style="font-size: small;">
+      <button-default>Default</button-default>
+      <button-primary>Primary</button-primary>  
+      <button-secondary>Secondary</button-secondary>
+      <button-warning>Warning</button-warning>
+      <button-danger>Danger</button-danger>
+    </div>
+
+    <h2>Custom Button</h2>
+                
+    <button-custom
+      style="
+        font-size: 3rem;
+        --text-color: white;
+        --background: linear-gradient(
+          to top left,
+          hsl(187, 100%, 71%),
+          hsl(54, 100%, 50%));
+        --border-color: #add8e6;
+        --hover-text-color: white;
+        --hover-background: linear-gradient(
+          to top left,
+          hsl(187, 100%, 61%),
+          hsl(54, 100%, 40%));
+        --hover-border-color: rgb(148, 184, 196);
+        --active-text-color: white;
+        --active-background: linear-gradient(
+          to top left,
+          hsl(187, 100%, 51%),
+          hsl(54, 100%, 30%));
+        --active-border-color: rgb(126, 158, 168);">
+      <icon-column-line-chart slot="prefix"></icon-column-line-chart>
+      Large
+      <icon-piggy-bank-coin slot="suffix"></icon-piggy-bank-coin>
+    </button-custom>
+
+    <h2>One Click Disabled</h2>
+
+    <button-default id="one-click-test" one-click>Press Me</button-default>
+
+    <br>
+
+    <button-default onclick="document.getElementById('one-click-test').disabled=false;">Re-enable Button</button-default>
+
+  </section>
+
+</body>
+</html>

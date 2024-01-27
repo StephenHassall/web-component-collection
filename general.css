@@ -1,0 +1,30 @@
+/**
+ * General CSS
+ * @author Stephen Paul Hassall
+ * @license https://CodeRunDebug.com/license.html
+ * @web https://CodeRunDebug.com
+ */
+
+/** All pages **/
+html {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+body {
+  color: rgb(48,48,48);
+}
+
+*:not(:defined) {
+  display: none;
+}

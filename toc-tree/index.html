@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/general.css" rel="stylesheet" type="text/css" media="all">
+  <title>TOC Tree</title>
+  <script type="module" src="toc-tree.js"></script>
+</head>
+<body>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #404040;
+        color: rgb(248,248,248);
+      }
+    }    
+  </style>
+
+  <section>
+    <h1>TOC (table of contents) Tree</h1>
+
+    <h2>Simple List</h2>
+
+    <toc-tree open>
+      <div slot="title">Main Title</div>
+      <a href="" slot="content">Item #1</a>
+      <a href="" slot="content">Item #2</a>
+      <a href="" slot="content">Item #3</a>
+    </toc-tree>
+
+    <h2>Multiple Lists</h2>
+
+    <toc-tree open>
+      <div slot="title">Title #1</div>
+      <a href="" slot="content">Item #1</a>
+      <a href="" slot="content">Item #2</a>
+      <a href="" slot="content">Item #3</a>
+    </toc-tree>
+    <toc-tree>
+      <div slot="title">Title #2</div>
+      <a href="" slot="content">Item #1</a>
+      <a href="" slot="content">Item #2</a>
+      <a href="" slot="content">Item #3</a>
+    </toc-tree>
+    <toc-tree>
+      <div slot="title">Title #3</div>
+      <a href="" slot="content">Item #1</a>
+      <a href="" slot="content">Item #2</a>
+      <a href="" slot="content">Item #3</a>
+    </toc-tree>
+
+    <h2>Inner Sub-list</h2>
+
+    <toc-tree open>
+      <div slot="title">Main Title</div>
+      <a href="" slot="content">Item #1</a>
+      <a href="" slot="content">Item #2</a>
+      <a href="" slot="content">Item #3</a>
+      <toc-tree slot="content">
+        <div slot="title">Item #4</div>
+        <a href="" slot="content">Sub-item #4.1</a>
+        <a href="" slot="content">Sub-item #4.2</a>
+        <a href="" slot="content">Sub-item #4.3</a>
+        <a href="" slot="content">Sub-item #4.4</a>
+      </toc-tree>
+      <a href="" slot="content">Item #5</a>
+      <a href="" slot="content">Item #6</a>
+    </toc-tree>
+
+  </section>
+</body>
+</html>

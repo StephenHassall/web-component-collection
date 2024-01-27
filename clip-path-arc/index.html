@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/general.css" rel="stylesheet" type="text/css" media="all">
+  <title>Clip Path Arc</title>
+  <script type="module" src="clip-path-arc.js"></script>
+</head>
+<body>
+  <section>
+    <h1>Clip Path Arc</h1>
+
+    <h2>Color Backgrounds</h1>
+         
+    <clip-path-arc style="width: 20rem; height: 20rem;">
+      <div
+        style="background-color: darkorange;"
+        start-angle="20"
+        end-angle="135"
+        radius-outer="100"
+        radius-inner="80"></div>
+      <div
+        style="background-color: lightblue;"
+        start-angle="140"
+        end-angle="235"
+        radius-outer="100"
+        radius-inner="80"></div>
+      <div
+        style="background-color: gold;"
+        start-angle="240"
+        end-angle="15"
+        radius-outer="100"
+        radius-inner="80"></div>
+    </clip-path-arc>
+
+
+    <h2>Image Backgrounds</h2>
+          
+    <clip-path-arc style="width: 20rem; height: 20rem;">
+      <img
+        src="fish.jpg"
+        start-angle="20"
+        end-angle="140"
+        radius-outer="100"
+        radius-inner="40">
+      <img
+        src="sea.jpg"
+        start-angle="140"
+        end-angle="240"
+        radius-outer="90"
+        radius-inner="50">
+      <img
+        src="clouds.jpg"
+        start-angle="240"
+        end-angle="20"
+        radius-outer="80"
+        radius-inner="60">        
+    </clip-path-arc>
+        
+    <h2>Interactive Images</h2>
+          
+    <style>
+      .water {
+        position: relative;
+        width: 20rem;
+        height: 20rem;
+      }
+      .water > img {
+        width: 100%;
+        height: 100%;
+      }
+      .water > clip-path-arc {
+        position: absolute;
+        inset: 0.25rem;
+        filter: drop-shadow(0 0 8px rgb(0 0 0 / 70%));
+      }
+      .water > clip-path-arc > img {
+        cursor: pointer;
+      }
+      .water > clip-path-arc > img:hover {
+        filter: grayscale(60%);
+      }
+      .water > clip-path-arc > img:active {
+        transform: scale(0.9);
+        filter: grayscale(60%);
+      }
+    </style>
+
+    <div class="water">
+      <img src="drought.jpg">
+      <clip-path-arc>
+        <img
+          src="fish.jpg"
+          draggable="false"
+          start-angle="20"
+          end-angle="135"
+          radius-outer="100"
+          radius-inner="40">
+        <img
+          src="sea.jpg"
+          draggable="false"
+          start-angle="140"
+          end-angle="235"
+          radius-outer="90"
+          radius-inner="50">
+        <img
+          src="clouds.jpg"
+          draggable="false"
+          start-angle="240"
+          end-angle="15"
+          radius-outer="80"
+          radius-inner="60">        
+      </clip-path-arc>
+    </div>
+
+  </section>
+  
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/general.css" rel="stylesheet" type="text/css" media="all">
+  <title>Background Moving Blocks</title>
+  <script type="module" src="background-moving-blocks.js"></script>
+  <script type="module" src="/icon/column-line-chart.js"></script>
+  <script type="module" src="/icon/database-tick.js"></script>
+  <script type="module" src="/icon/ungroup.js"></script>
+  <script type="module" src="/icon/file1.js"></script>
+  <script type="module" src="/icon/thumbs-up.js"></script>
+  <script type="module" src="/icon/exclamation-mark-diamond.js"></script>
+</head>
+<body>
+  <section>
+    <h1>Background Moving Blocks</h1>
+
+    <h2>Color squares</h2>
+          
+    <background-moving-blocks
+      square
+      style="
+        width: 100%;
+        height: 10rem;
+        --cell-column-count: 30;
+        --fill-ratio: 50;
+        --move-speed: 0.25s;
+        --move-transition: ease-in-out;
+        --move-interval: 250;">
+      <div style="background-color: #f3732d;"></div>
+      <div style="background-color: #f8961f;"></div>
+      <div style="background-color: #f9c750;"></div>
+      <div style="background-color: #287ea1;"></div>
+      <div style="background-color: #44aa8b;"></div>
+    </background-moving-blocks>
+
+    <h2>Shapes</h2>
+
+    <background-moving-blocks
+      square
+      style="
+        width: 100%;
+        height: 15rem;
+        background-image: linear-gradient(
+          to top left,
+          hsl(187, 100%, 71%),
+          hsl(54, 100%, 50%));
+        --cell-column-count: 30;
+        --fill-ratio: 60;
+        --move-speed: 0.5s;
+        --move-transition: ease-in-out;
+        --move-interval: 100;">
+      <icon-column-line-chart style="fill: white;"></icon-column-line-chart>
+      <icon-database-tick style="fill: #287ea1;"></icon-database-tick>
+      <icon-ungroup style="fill: #287ea1;"></icon-ungroup>
+      <icon-file1 style="fill: #287ea1;"></icon-file1>
+      <icon-thumbs-up style="fill: #287ea1;"></icon-thumbs-up>
+      <icon-exclamation-mark-diamond style="fill: #287ea1;"></icon-exclamation-mark-diamond>
+    </background-moving-blocks>
+
+    <h2>Numbers</h2>
+
+    <background-moving-blocks
+      style="
+        width: 100%;
+        height: 20rem;
+        --cell-column-count: 30;
+        --cell-row-count: 7;
+        --fill-ratio: 60;
+        --move-speed: 0.25s;
+        --move-transition: ease-in-out;
+        --move-interval: 100;
+        background: linear-gradient(to top left, hwb(276.27deg 45.98% 15.44%), hsl(221.54deg 50.65% 49.44%));"
+    >
+      <div style="display: grid; align-items: center; justify-items: center; grid-template-columns: 1fr; grid-template-rows: 1fr;">
+        <div style="color: rgba(248, 248, 248, 0.8); font-size: 2rem;">0</div>
+      </div>
+      <div style="display: grid; align-items: center; justify-items: center; grid-template-columns: 1fr; grid-template-rows: 1fr;">
+        <div style="color: rgba(248, 248, 248, 0.8); font-size: 2rem;">1</div>
+      </div>
+      <div style="display: grid; align-items: center; justify-items: center; grid-template-columns: 1fr; grid-template-rows: 1fr;">
+        <div style="color: rgba(248, 248, 248, 0.8); font-size: 2rem;">2</div>
+      </div>
+      <div style="display: grid; align-items: center; justify-items: center; grid-template-columns: 1fr; grid-template-rows: 1fr;">
+        <div style="color: rgba(248, 248, 248, 0.8); font-size: 2rem;">3</div>
+      </div>
+      <div style="display: grid; align-items: center; justify-items: center; grid-template-columns: 1fr; grid-template-rows: 1fr;">
+        <div style="color: rgba(248, 248, 248, 0.8); font-size: 2rem;">4</div>
+      </div>
+      <div style="display: grid; align-items: center; justify-items: center; grid-template-columns: 1fr; grid-template-rows: 1fr;">
+        <div style="color: rgba(248, 248, 248, 0.8); font-size: 2rem;">5</div>
+      </div>
+      <div style="display: grid; align-items: center; justify-items: center; grid-template-columns: 1fr; grid-template-rows: 1fr;">
+        <div style="color: rgba(248, 248, 248, 0.8); font-size: 2rem;">6</div>
+      </div>
+      <div style="display: grid; align-items: center; justify-items: center; grid-template-columns: 1fr; grid-template-rows: 1fr;">
+        <div style="color: rgba(248, 248, 248, 0.8); font-size: 2rem;">7</div>
+      </div>
+      <div style="display: grid; align-items: center; justify-items: center; grid-template-columns: 1fr; grid-template-rows: 1fr;">
+        <div style="color: rgba(248, 248, 248, 0.8); font-size: 2rem;">8</div>
+      </div>
+      <div style="display: grid; align-items: center; justify-items: center; grid-template-columns: 1fr; grid-template-rows: 1fr;">
+        <div style="color: rgba(248, 248, 248, 0.8); font-size: 2rem;">9</div>
+      </div>
+    </background-moving-blocks>
+
+
+  </section>
+
+</body>
+</html>

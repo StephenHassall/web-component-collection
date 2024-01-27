@@ -1,0 +1,23 @@
+{
+  "name": "web-component-collection",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Collection of Web Components.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephenHassall/web-component-collection.git"
+  },
+  "author": "Stephen Paul Hassall",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/StephenHassall/web-component-collection/issues"
+  },
+  "homepage": "https://github.com/StephenHassall/web-component-collection#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

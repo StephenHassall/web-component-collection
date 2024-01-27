@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/general.css" rel="stylesheet" type="text/css" media="all">
+  <title>Background Rotating Fans</title>
+  <script type="module" src="background-rotating-fans.js"></script>
+</head>
+<body>
+  <section>
+    <h1>Background Rotation Fans</h1>
+        
+    <h2>Single fan and an offset that is on screen</h2>
+          
+    <background-rotating-fans
+      style="
+        height: 15rem;
+        --fan1-color1: #f9c750;
+        --fan1-color2: #287ea1;
+        --fan1-speed: 120s;
+        --fan1-gap: 20deg;
+        --fan1-color-gap: 0.5deg;
+        --fan1-x: -40%;
+        --fan1-y: -30%;
+        --fan1-opacity: 1.0;">
+    </background-rotating-fans>
+
+    <h2>Single fan, offset is off screen, with blurry fan blades</h2>
+
+    <background-rotating-fans
+      style="
+        height: 15rem;
+        --fan1-color1: #90e0ef;
+        --fan1-color2: #023e8a;
+        --fan1-speed: 60s;
+        --fan1-gap: 10deg;
+        --fan1-color-gap: 9.0deg;
+        --fan1-x: 60%;
+        --fan1-y: -70%;
+        --fan1-opacity: 1.0;">
+    </background-rotating-fans>
+
+    <h2>Two fans at different speeds</h2>
+        
+    <background-rotating-fans
+      style="
+        height: 15rem;
+        --fan1-color1: #ff99c8;
+        --fan1-color2: #fcf6bd;
+        --fan1-speed: 120s;
+        --fan1-gap: 20deg;
+        --fan1-color-gap: 1deg;
+        --fan1-x: -40%;
+        --fan1-y: -40%;
+        --fan1-opacity: 0.5;
+        --fan2-color1: #9d4edd;
+        --fan2-color2: #ff8fa3;
+        --fan2-speed: 30s;
+        --fan2-gap: 10deg;
+        --fan2-color-gap: 0.5deg;
+        --fan2-x: 40%;
+        --fan2-y: 40%;
+        --fan2-opacity: 0.5;">
+    </background-rotating-fans>
+
+
+    <h2>Three fans, all with different settings</h2>
+        
+    <background-rotating-fans
+      style="
+        height: 15rem;
+        --fan1-color1: red;
+        --fan1-color2: gold;
+        --fan1-speed: 120s;
+        --fan1-gap: 20deg;
+        --fan1-color-gap: 0.5deg;
+        --fan1-x: -40%;
+        --fan1-y: -45%;
+        --fan1-opacity: 0.3333;
+        --fan2-color1: green;
+        --fan2-color2: white;
+        --fan2-speed: 90s;
+        --fan2-gap: 30deg;
+        --fan2-color-gap: 1deg;
+        --fan2-x: 60%;
+        --fan2-y: -60%;
+        --fan2-opacity: 0.3333;
+        --fan3-color1: blue;
+        --fan3-color2: white;
+        --fan3-speed: 60s;
+        --fan3-gap: 10deg;
+        --fan3-color-gap: 2deg;
+        --fan3-x: -10%;
+        --fan3-y: 60%;
+        --fan3-opacity: 0.3333;">
+    </background-rotating-fans>
+
+  </section>
+
+</div>
+</body>
+</html>

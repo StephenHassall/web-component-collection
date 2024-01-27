@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/general.css" rel="stylesheet" type="text/css" media="all">
+  <title>Color Picker</title>
+  <script type="module" src="color-picker.js"></script>
+</head>
+<body>
+<style>
+  .example-dialog > label {
+    display: inline-block;
+    font-weight: bold;
+  }
+  .example-dialog > div {
+    display: inline-block;
+    border: 1px solid gray;
+    cursor: pointer;
+    padding: 4px;
+  }
+</style>
+  <section>
+    <h1>Color Picker</h1>
+
+    <h2>Using defaults.</h2>
+
+    <color-picker style="width: 20rem; height: 20rem;">
+    </color-picker>
+
+    <h2>Make it small.</h2>
+
+    <color-picker
+      style="
+        width: 15rem;
+        height: 20rem;
+        background-color: #303030;
+        font-size: 0.75rem;">
+    </color-picker>
+
+    <h2>Using it with a dialog.</h2>
+
+    <div class="example-dialog">
+      <label>Color:</label>
+      <div id="color-input">press to select color</div>
+    </div>
+
+    <dialog id="color-dialog">
+      <color-picker id="color-picker" style="width: 15rem; height: 20rem;">
+      </color-picker>
+      <button id="done">Done</button>
+    </dialog>
+
+  </section>
+
+<script type="module">
+  // Set current color
+  let currentColor = '';
+
+  // Get color input element
+  const colorInputElement = document.getElementById('color-input');
+
+  // Get color dialog element
+  const colorDialogElement = document.getElementById('color-dialog');
+
+  // Get color picker element
+  const colorPickerElement = document.getElementById('color-picker');
+
+  // Get done element
+  const doneElement = document.getElementById('done');
+
+  // Add color input click event
+  colorInputElement.addEventListener('click', function () {
+    // Show the dialog
+    colorDialogElement.showModal();
+
+    // Set starting color to the current color
+    colorPickerElement.value = currentColor;
+  });
+
+  // Add done click event
+  doneElement.addEventListener('click', function () {
+    // Update the color input
+    colorInputElement.innerText = colorPickerElement.value;
+
+    // Set the new current color
+    currentColor = colorPickerElement.value;
+
+    // Close the dialog
+    colorDialogElement.close();    
+  });
+
+</script>
+</body>
+</html>

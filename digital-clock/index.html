@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/general.css" rel="stylesheet" type="text/css" media="all">
+  <title>Digital Clock</title>
+  <script type="module" src="digital-clock.js"></script>
+</head>
+<body>
+  <section>
+    <h1>Digital Clock</h1>
+
+    <div
+      style="
+        width: 100%;
+        max-width: 60rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 2fr;
+        height: 30rem;">
+
+      <digital-clock
+        style="
+          grid-column: 1;
+          grid-row: 1;">
+      </digital-clock>
+
+      <digital-clock
+        style="
+          grid-column: 2;
+          grid-row: 1;
+          --base-color: lightgoldenrodyellow;
+          --line-on-color: purple;
+          --line-off-color: antiquewhite;">
+      </digital-clock>
+
+      <digital-clock
+        show-24
+        style="
+          grid-column: 1 / span 2;
+          grid-row: 2;
+          --base-color: lightblue;
+          --line-on-color: blue;
+          --line-off-color: #a9cdd9;">
+      </digital-clock>
+    </div>
+
+  </section>
+</body>
+</html>

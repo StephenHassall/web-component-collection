@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/general.css" rel="stylesheet" type="text/css" media="all">
+  <title>Grid Setup</title>
+  <script type="module" src="grid-setup.js"></script>
+  <script type="module" src="../buttons/buttons.js"></script>  
+</head>
+<body>
+<style>
+  grid-setup > * {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-size: 1.5rem;
+  }
+</style>
+  <section>
+    <h1>Grid Setup</h1>
+
+    <h2>Including cell slot elements.</h2>
+         
+    <grid-setup
+      style="width: 20rem; height: 20rem;"
+      columns="75, 25"
+      rows="40, 40, 20">
+      <div style="background-color: darkorange;" column="1" row="1" colspan="1" rowspan="2">A</div>
+      <div style="background-color: lightblue;" column="2" row="1">B</div>
+      <div style="background-color: lightcoral;" column="2" row="2">C</div>
+      <div style="background-color: gold;" column="1" row="3" colspan="2" rowspan="1">D</div>
+    </grid-setup>
+
+    <h2>Manually set edit modes.</h2>
+
+    <grid-setup
+      id="manual-edit"
+      style="width: 20rem; height: 20rem;"
+      columns="75, 25"
+      rows="40, 40, 20">
+      <div style="background-color: darkorange;" column="1" row="1" colspan="1" rowspan="2">A</div>
+      <div style="background-color: lightblue;" column="2" row="1">B</div>
+      <div style="background-color: lightcoral;" column="2" row="2">C</div>
+      <div style="background-color: gold;" column="1" row="3" colspan="2" rowspan="1">D</div>
+    </grid-setup>
+
+    <button-default id="manual-edit-size">Size</button-default>
+    <button-default id="manual-edit-number">Number</button-default>
+    <button-default id="manual-edit-block">Block</button-default>
+    <button-default id="manual-edit-select">Select</button-default>
+    <button-default id="manual-edit-clear">Clear</button-default>
+
+    <h2>Using the menu option.</h2>
+
+    <grid-setup
+      id="menu"
+      style="width: 20rem; height: 20rem;"
+      columns="75, 25"
+      rows="40, 40, 20">
+      <div style="background-color: darkorange;" column="1" row="1" colspan="1" rowspan="2">A</div>
+      <div style="background-color: lightblue;" column="2" row="1">B</div>
+      <div style="background-color: lightcoral;" column="2" row="2">C</div>
+      <div style="background-color: gold;" column="1" row="3" colspan="2" rowspan="1">D</div>
+    </grid-setup>
+
+    <button-default id="menu-on">Turn Menu On</button-default>
+    <button-default id="menu-off">Turn Menu Off</button-default>
+
+  </section>
+
+<script type="module">
+  // Manual edit
+  const manualEditElement = document.getElementById('manual-edit');
+  const manualEditSizeElement = document.getElementById('manual-edit-size');
+  const manualEditNumberElement = document.getElementById('manual-edit-number');
+  const manualEditBlockElement = document.getElementById('manual-edit-block');
+  const manualEditSelectElement = document.getElementById('manual-edit-select');
+  const manualEditClearElement = document.getElementById('manual-edit-clear');
+
+  manualEditSizeElement.addEventListener('click', function () {
+    manualEditElement.setAttribute('edit-mode', 'size');
+  });
+  manualEditNumberElement.addEventListener('click', function () {
+    manualEditElement.setAttribute('edit-mode', 'number');
+  });
+  manualEditBlockElement.addEventListener('click', function () {
+    manualEditElement.setAttribute('edit-mode', 'block');
+  });
+  manualEditSelectElement.addEventListener('click', function () {
+    manualEditElement.setAttribute('edit-mode', 'select');
+  });
+  manualEditClearElement.addEventListener('click', function () {
+    manualEditElement.removeAttribute('edit-mode');
+  });
+  manualEditElement.addEventListener('add', function (event) {
+    addCell(manualEditElement, event);
+  });
+  manualEditElement.addEventListener('select', function () {
+    manualEditElement.removeAttribute('edit-mode');
+  });
+
+  // Menu
+  const menuElement = document.getElementById('menu');
+  const menuOnElement = document.getElementById('menu-on');
+  const menuOffElement = document.getElementById('menu-off');
+
+  menuOnElement.addEventListener('click', function () {
+    menuElement.setAttribute('menu', 'top-left');
+  });
+  menuOffElement.addEventListener('click', function () {
+    menuElement.removeAttribute('menu');
+  });
+  menuElement.addEventListener('add', function (event) {
+    addCell(menuElement, event);
+  });
+
+  // Add cell count
+  let addCellCount = 1;
+
+  // Add cell
+  let addCell = function (gridSetupElement, addEvent) {
+    let randomColorH = Math.floor(Math.random() * 360);
+    const newCellSlot = document.createElement('DIV');
+    newCellSlot.setAttribute('column', addEvent.detail.column.toString());
+    newCellSlot.setAttribute('row', addEvent.detail.row.toString());
+    
+    newCellSlot.style.backgroundColor = 'hsl(' + randomColorH.toString() + ', 50%, 50%)';
+    newCellSlot.innerText = addCellCount.toString();
+    newCellSlot.id = addCellCount.toString();
+    addCellCount++;
+    gridSetupElement.appendChild(newCellSlot);
+  }
+
+
+</script>
+</body>
+</html>
